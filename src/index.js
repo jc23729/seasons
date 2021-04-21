@@ -6,6 +6,8 @@ if (module.hot) {
 }
 
 class App extends React.Component {
+    //constructor function, its the first function anytime an instance of a class is created
+    //React says we have to define render//
   render() {
     window.navigator.geolocation.getCurrentPosition(
       (position) => console.log(position),
