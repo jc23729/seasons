@@ -14,20 +14,21 @@ class App extends React.Component {
     );
   }
 
-  //React says we have to define a render
+  // React says we have to define render!!
   render() {
     if (this.state.errorMessage && !this.state.lat) {
-      return <div>Error : {this.state.errorMessage}</div>;
+      return <div>Error: {this.state.errorMessage}</div>;
     }
+
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>;
+      return <SeasonDisplay lat={this.state.lat} />;
     }
-    return <div>Loading...</div>;
+
+    return <div>Loading!</div>;
   }
 }
 
 ReactDOM.render(<App />, document.querySelector("#root"));
-
 // class App extends React.Component {
 //   //constructor function, its the first function anytime an instance of a class is created
 //   //React says we have to define render//
