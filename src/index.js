@@ -9,22 +9,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { lat: null, errorMessage: ''};
+    this.state = { lat: null, errorMessage: "" };
 
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({ lat: position.coords.latitude });
       },
-        (err) => {
-          this.setState({ errorMessage: err.message });
+      (err) => {
+        this.setState({ errorMessage: err.message });
       }
     );
   }
   render() {
-      return <div>Latitude: {this.state.lat}
-          <br />
-          Error message: {this.state.errorMessage}
-      </div>;
+    return (
+      <div>
+        Latitude: {this.state.lat}
+        <br />
+        Error message: {this.state.errorMessage}
+      </div>
+    );
   }
 }
 
